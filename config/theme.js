@@ -9,9 +9,19 @@ export const spacing = {
 };
 
 export const size = {
+    logo: {
+        large: "30px",
+        madium: "20px",
+    },
+    icons: {
+        large: "20px",
+        medium: "17px",
+    },
     heading: {
-        h1: "96px",
-        h2: "64px",
+        large: "96px",
+        medium: "64px",
+        small: "40px",
+        extra_small: "30px",
     },
     text: {
         main: "14px",

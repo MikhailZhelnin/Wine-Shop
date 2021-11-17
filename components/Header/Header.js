@@ -1,46 +1,75 @@
 import Link from 'next/link'
-import {ShoppingCart, BookmarkBorder, PersonOutline} from '@material-ui/icons';
-import { Container, Grid } from '@material-ui/core';
+import {font, color, spacing, size} from '../../config/theme'
+import { RiShoppingCartLine } from 'react-icons/ri';
+import { BsBookmark } from 'react-icons/bs';
+import { AiOutlineUser } from 'react-icons/ai';
 
 const Header = () => {
 
     return (
         <>
-        <header>
-            <Grid container>
-                <Grid item lg>
-                    <Link href="/">
-                            <a> Wines </a>
-                        </Link>
-                    </Grid>
-                <Grid item lg={8}>
-                    <nav>
-                        <Link href="/">
-                            <a> Home </a>
-                        </Link>
-                        <Link href="/shop">
-                            <a> Shop </a>
-                        </Link>
-                        <Link href="/about-us">
-                            <a> About Us </a>
-                        </Link>
-                        <Link href="/contact">
-                            <a> Contact </a>
-                        </Link>
+        <header className="header">
+            <div className="container">
+                <div className="header-wrapper">
+                    <h2 className="header-title">Winesssss</h2>
+                    <nav className="header-nav">
+                        <a href="/">Home</a>
+                        <a href="/shop">Shop</a>
+                        <a href="/about-us">About Us</a>
+                        <a href="contact">Contact</a>
                     </nav>
-                </Grid>
-                <Grid item lg>
-                    <nav>
-                        <ShoppingCart/>
-                        <BookmarkBorder/>
-                        <PersonOutline/>
+                    <nav className="header-user">
+                        <button><RiShoppingCartLine/></button>
+                        <button><BsBookmark/></button>
+                        <button><AiOutlineUser/></button>
                     </nav>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
+            
         </header>
         <style jsx>{`
+            .header {
+                padding: ${spacing.mini};
+                background-color: ${color.background.dark};
+                color: ${color.text.light};
+            }
             .header-wrapper {
                 display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .header-title {
+                font-size: ${size.logo.large};
+                font-family: ${font.secondary};
+            }
+            .header-nav a {
+                margin-right: 10px;
+                cursor: pointer;
+                transition: color .2s linear;
+            }
+            .header-nav a:last-child {
+                margin-right: 0;
+            }
+            .header-nav a:hover {
+                color: ${color.text.secondary};
+            }
+            .header-user {
+                display: flex;
+                align-items: center;
+            }
+            .header-user button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 15px;
+                font-size: 20px;
+                background: none;
+                border: none;
+                color: inherit;
+                cursor: pointer;
+            }
+            .header-user button:last-child {
+                margin-right: 0;
             }
         `}</style>
         </>
