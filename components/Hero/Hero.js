@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { font, color, spacing, size, breakpoints } from '../../config/theme';
+import { font, color, spacing, size } from '../../config/theme';
 
 import heroimg from '../../utils/images/hero/heroimg.png';
 
@@ -19,6 +19,7 @@ const Hero = () => {
       <style jsx>{`
         .hero {
           position: relative;
+          margin-bottom: ${spacing.large};
         }
         .hero-img {
           position: relative;

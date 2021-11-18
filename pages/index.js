@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
+import Poster from '../components/Poster/Poster';
 
 export default function Home() {
   return (
@@ -17,7 +17,11 @@ export default function Home() {
       </Head>
 
       <Header />
-      <Hero />
+
+      <main>
+        <Hero />
+        <Poster />
+      </main>
     </div>
   );
 }
