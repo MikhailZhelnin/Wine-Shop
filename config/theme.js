@@ -41,6 +41,7 @@ export const size = {
   icons: {
     large: '20px',
     medium: '17px',
+    extra_large: '25px',
   },
   heading: {
     extra_large: '96px',
@@ -52,6 +53,7 @@ export const size = {
   text: {
     main: '14px',
     large: '18px',
+    extra_large: '25px',
   },
   button: '20px',
 };

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Popover from '@mui/material/Popover';
 import Drawer from '@mui/material/Drawer';
+import Divider from '@mui/material/Divider';
+
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -92,6 +94,7 @@ const Header = () => {
           <Link href="/login">
             <a>Login</a>
           </Link>
+          <Divider style={{width: '100%'}}/>
           <Link href="/registration">
             <a>Registration</a>
           </Link>
@@ -100,7 +103,7 @@ const Header = () => {
 
       <Drawer anchor="right" open={mobileMenu} onClose={handleMobileMenuClose}>
         <div className="mobile-menu">
-          <nav className="mobile-menu__wrapper">
+          <nav className="mobile-menu__nav">
             <Link href="/">
               <a>Home</a>
             </Link>
@@ -114,6 +117,23 @@ const Header = () => {
               <a>Contact</a>
             </Link>
           </nav>
+          <Divider style={{width: '100%', margin: '10px 0'}}/>
+          <nav className="mobile-menu__user">
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+            <Link href="/registration">
+              <a>Registration</a>
+            </Link>
+          </nav>
+          <div className="mobile-menu__user-actions">
+              <Link href="/user">
+                <a><RiShoppingCartLine /></a>
+              </Link>
+              <Link href="/user">
+                <a><BsBookmark /></a>
+              </Link>
+            </div>
         </div>
       </Drawer>
       <style jsx>{`
@@ -164,6 +184,9 @@ const Header = () => {
           color: inherit;
           cursor: pointer;
         }
+        .header-mobileMenu {
+          font-size: ${size.icons.extra_large};
+        }
         .header-user button:last-child,
         .header-mobileMenu:last-child {
           margin-right: 0;
@@ -175,10 +198,41 @@ const Header = () => {
           padding: 15px;
         }
         .header-user__popup a {
-          margin-bottom: 10px;
+          margin-bottom: 4px;
         }
         .header-user__popup a:last-child {
           margin-bottom: 0;
+        }
+
+
+        .mobile-menu {
+          width: 250px;
+          height: 100%;
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .mobile-menu__nav,
+        .mobile-menu__user {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .mobile-menu__user {
+          margin-bottom: 10px;
+        }
+        .mobile-menu__nav a,
+        .mobile-menu__user a {
+          font-size: ${size.text.extra_large};
+        }
+        .mobile-menu__user-actions a {
+          display: inline-flex;
+          font-size: ${size.icons.extra_large};
+        }
+        .mobile-menu__user-actions a:first-child {
+          margin-right: 15px;
         }
       `}</style>
     </>
