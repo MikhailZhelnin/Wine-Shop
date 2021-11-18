@@ -35,37 +35,42 @@ const Header = () => {
       <header className="header">
         <div className="container">
           <div className="header-wrapper">
+            <>
             <h2 className="header-title">Wines</h2>
-            <nav className="header-nav">
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-              <Link href="/shop">
-                <a>Shop</a>
-              </Link>
-              <Link href="/about-us">
-                <a>About Us</a>
-              </Link>
-              <Link href="/contact">
-                <a>Contact</a>
-              </Link>
-            </nav>
-            <nav className="header-user">
-              <button>
-                <RiShoppingCartLine />
+            {width > breakpoints.tablet.min ? (
+              <>
+                <nav className="header-nav">
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                  <Link href="/shop">
+                    <a>Shop</a>
+                  </Link>
+                  <Link href="/about-us">
+                    <a>About Us</a>
+                  </Link>
+                  <Link href="/contact">
+                    <a>Contact</a>
+                  </Link>
+                </nav>
+                <nav className="header-user">
+                  <button>
+                    <RiShoppingCartLine />
+                  </button>
+                  <button>
+                    <BsBookmark />
+                  </button>
+                  <button onClick={handleUserPopupOpen}>
+                    <AiOutlineUser />
+                  </button>
+                </nav>
+              </>
+            ) : (
+              <button className="header-mobileMenu">
+                <HiMenu onClick={handleMobileMenuOpen} />
               </button>
-              <button>
-                <BsBookmark />
-              </button>
-              <button onClick={handleUserPopupOpen}>
-                <AiOutlineUser />
-              </button>
-              {width <= breakpoints.tablet.min && (
-                <button>
-                  <HiMenu onClick={handleMobileMenuOpen} />
-                </button>
-              )}
-            </nav>
+            )}
+            </>
           </div>
         </div>
       </header>
@@ -94,7 +99,22 @@ const Header = () => {
       </Popover>
 
       <Drawer anchor="right" open={mobileMenu} onClose={handleMobileMenuClose}>
-        hello
+        <div className="mobile-menu">
+          <nav className="mobile-menu__wrapper">
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+            <Link href="/shop">
+              <a>Shop</a>
+            </Link>
+            <Link href="/about-us">
+              <a>About Us</a>
+            </Link>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </nav>
+        </div>
       </Drawer>
       <style jsx>{`
         .header {
@@ -131,7 +151,8 @@ const Header = () => {
           display: flex;
           align-items: center;
         }
-        .header-user button {
+        .header-user button,
+        .header-mobileMenu {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -143,7 +164,8 @@ const Header = () => {
           color: inherit;
           cursor: pointer;
         }
-        .header-user button:last-child {
+        .header-user button:last-child,
+        .header-mobileMenu:last-child {
           margin-right: 0;
         }
         .header-user__popup {

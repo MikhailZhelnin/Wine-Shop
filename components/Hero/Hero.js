@@ -46,6 +46,15 @@ const Hero = () => {
           color: ${color.text.light};
           line-height: 1;
         }
+
+        @media (max-width: 767px) {
+          .hero-content__subtitle {
+            font-size: ${size.heading.extra_small};
+          }
+          .hero-content__title {
+            font-size: ${size.heading.medium};
+          }
+        }
       `}</style>
     </>
   );

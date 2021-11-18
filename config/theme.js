@@ -43,10 +43,11 @@ export const size = {
     medium: '17px',
   },
   heading: {
-    large: '96px',
+    extra_large: '96px',
+    large: '80px',
     medium: '64px',
     small: '40px',
-    extra_small: '30px',
+    extra_small: '25px',
   },
   text: {
     main: '14px',
