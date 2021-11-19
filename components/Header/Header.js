@@ -109,7 +109,8 @@ const Header = () => {
           font-family: ${font.secondary};
         }
         .header-nav a {
-          margin-right: ${spacing.tiny};
+          margin-right: ${spacing.small};
+          font-size: ${size.text.large};
           cursor: pointer;
           transition: color 0.2s linear;
         }

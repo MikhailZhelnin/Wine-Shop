@@ -5,7 +5,7 @@ import { BsBookmark } from 'react-icons/bs';
 import { CgClose } from 'react-icons/cg';
 import { AiOutlineUser } from 'react-icons/ai';
 
-import { size, color } from '../../../config/theme';
+import { size, color, spacing } from '../../../config/theme';
 
 const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
   return (
@@ -42,7 +42,7 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
             </Link>
           </nav>
           <button className="mobile-menu__close" onClick={() => setOpenMobileMenu(false)}>
-            <CgClose/>
+            <CgClose />
           </button>
         </div>
       </Drawer>
@@ -71,11 +71,12 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
           width: 100%;
           display: flex;
           justify-content: center;
-          padding: 15px 10px;
+          padding: ${spacing.tiny} ${spacing.mini};
           background-color: ${color.background.extra_dark};
         }
         .mobile-menu__user button {
           display: inline-flex;
+          margin-right: ${spacing.tiny};
           font-size: ${size.icons.extra_large};
           color: inherit;
           background: none;
@@ -86,8 +87,16 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
         .mobile-menu__user a {
           font-size: ${size.text.extra_large};
         }
+        .mobile-menu__nav a {
+          margin-bottom: ${spacing.tiny};
+          font-size: ${size.heading.extra_small};
+        }
         .mobile-menu__user a {
           display: flex;
+          margin-right: ${spacing.tiny};
+        }
+        .mobile-menu__user a:last-child {
+          margin-right: 0;
         }
         .mobile-menu__close {
           position: absolute;

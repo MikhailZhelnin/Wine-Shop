@@ -42,11 +42,11 @@ export const spacing = {
 
 export const size = {
   logo: {
-    large: '30px',
+    large: '35px',
     madium: '20px',
   },
   icons: {
-    large: '20px',
+    large: '23px',
     medium: '17px',
     extra_large: '25px',
     extra: '50px',
@@ -84,7 +84,7 @@ export const color = {
   },
   background: {
     white: '#FFFFFF',
-    white_darker: "#F2F2F2",
+    white_darker: '#F2F2F2',
     dark: '#050505',
     extra_dark: '#000000',
     secondary: '#B0976D',
