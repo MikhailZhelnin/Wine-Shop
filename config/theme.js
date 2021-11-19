@@ -23,6 +23,13 @@ export const breakpoints = {
   },
 };
 
+export const media = {
+  small_mobile: `max-width: ${breakpoints.small_mobile.max}px`,
+  mobile: `(max-width: ${breakpoints.mobile.max}px)`,
+  tablet: `(max-width: ${breakpoints.tablet.max}px)`,
+  desktop: `(max-width: ${breakpoints.desktop.max}px)`,
+};
+
 export const spacing = {
   nano: '4px',
   mini: '8px',
@@ -42,6 +49,7 @@ export const size = {
     large: '20px',
     medium: '17px',
     extra_large: '25px',
+    extra: '50px',
   },
   heading: {
     extra_large: '96px',
@@ -59,23 +67,27 @@ export const size = {
 };
 
 export const font = {
-  main: 'Poppins',
-  secondary: 'Croissant One, cursive',
+  main: 'Lato, sans-serif',
+  secondary: 'Playfair Display, serif',
 };
 
 export const color = {
   text: {
     light: '#ffffff',
-    light_darker: '#AEAEAE',
-    dark: '#000000',
-    secondary: '#A6934F',
+    light_darker: '#F2F2F2',
+    dark: '#050505',
+    secondary: '#B0976D',
+    secondary_light: '#c6af89',
   },
   border: {
-    dark: '#000000',
+    dark: '#050505',
   },
   background: {
     white: '#FFFFFF',
-    dark: '#000000',
+    white_darker: "#F2F2F2",
+    dark: '#050505',
+    extra_dark: '#000000',
+    secondary: '#B0976D',
     button: {
       default: '#111111',
       hover: '#464646',

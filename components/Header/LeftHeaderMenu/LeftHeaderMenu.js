@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import Drawer from '@mui/material/Drawer';
-import Divider from '@mui/material/Divider';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
+import { CgClose } from 'react-icons/cg';
+import { AiOutlineUser } from 'react-icons/ai';
 
-import { size } from '../../../config/theme';
+import { size, color } from '../../../config/theme';
 
-const LeftHeaderMenu = ({ mobileMenu, handleMobileMenuClose }) => {
+const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
   return (
     <>
-      <Drawer anchor="right" open={mobileMenu} onClose={handleMobileMenuClose}>
+      <Drawer anchor="right" open={openMobileMenu} onClose={() => setOpenMobileMenu(false)}>
         <div className="mobile-menu">
           <nav className="mobile-menu__nav">
             <Link href="/">
@@ -25,58 +26,77 @@ const LeftHeaderMenu = ({ mobileMenu, handleMobileMenuClose }) => {
               <a>Contact</a>
             </Link>
           </nav>
-          <Divider style={{ width: '100%', margin: '10px 0' }} />
           <nav className="mobile-menu__user">
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-            <Link href="/registration">
-              <a>Registration</a>
-            </Link>
-          </nav>
-          <div className="mobile-menu__user-actions">
-            <Link href="/user">
-              <a>
-                <RiShoppingCartLine />
-              </a>
-            </Link>
+            <button onClick={() => setOpenCart(true)}>
+              <RiShoppingCartLine />
+            </button>
             <Link href="/user">
               <a>
                 <BsBookmark />
               </a>
             </Link>
-          </div>
+            <Link href="/user">
+              <a>
+                <AiOutlineUser />
+              </a>
+            </Link>
+          </nav>
+          <button className="mobile-menu__close" onClick={() => setOpenMobileMenu(false)}>
+            <CgClose/>
+          </button>
         </div>
       </Drawer>
       <style jsx>{`
         .mobile-menu {
-          width: 250px;
+          position: relative;
+          width: 100vw;
           height: 100%;
           padding: 20px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          color: ${color.text.light};
+          background-color: #161616;
         }
-        .mobile-menu__nav,
-        .mobile-menu__user {
+        .mobile-menu__nav {
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
+          flex-grow: 1;
+          width: 100%;
         }
         .mobile-menu__user {
-          margin-bottom: 10px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 15px 10px;
+          background-color: ${color.background.extra_dark};
+        }
+        .mobile-menu__user button {
+          display: inline-flex;
+          font-size: ${size.icons.extra_large};
+          color: inherit;
+          background: none;
+          border: none;
+          cursor: pointer;
         }
         .mobile-menu__nav a,
         .mobile-menu__user a {
           font-size: ${size.text.extra_large};
         }
-        .mobile-menu__user-actions a {
-          display: inline-flex;
-          font-size: ${size.icons.extra_large};
+        .mobile-menu__user a {
+          display: flex;
         }
-        .mobile-menu__user-actions a:first-child {
-          margin-right: 15px;
+        .mobile-menu__close {
+          position: absolute;
+          top: 16px;
+          right: 24px;
+          font-size: ${size.icons.extra_large};
+          color: ${color.text.light};
+          background: none;
+          border: none;
         }
       `}</style>
     </>

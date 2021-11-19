@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Popover from '@mui/material/Popover';
-import Divider from '@mui/material/Divider';
 import { RiShoppingCartLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
@@ -10,39 +8,28 @@ import { HiMenu } from 'react-icons/hi';
 import { font, color, spacing, size, breakpoints } from '../../config/theme';
 import { useWindowSize } from '../../hooks/useWindowWidth';
 import LeftHeaderMenu from './LeftHeaderMenu/LeftHeaderMenu';
+import Cart from '../Cart/Cart';
 
 const Header = () => {
   const { width } = useWindowSize();
-  const [userPopup, setusePopup] = useState(null);
-  const [mobileMenu, setMobileMenu] = useState(null);
-  const open = Boolean(userPopup);
-  const id = open ? 'simple-popover' : undefined;
+  const [openMobileMenu, setOpenMobileMenu] = useState(null);
+  const [openCart, setOpenCart] = useState(null);
+  const [darkNavbar, setDarkNavbar] = useState(null);
 
-  const handleUserPopupOpen = (event) => {
-    setusePopup(event.currentTarget);
-  };
-  const handleUserPopapClose = () => {
-    setusePopup(null);
-  };
-  const handleMobileMenuOpen = () => {
-    setMobileMenu(true);
-  };
-  const handleMobileMenuClose = () => {
-    setMobileMenu(false);
-  };
+  const handleDarkNavbar = () => {
+    window.scrollY >= 180 ? setDarkNavbar(true) : setDarkNavbar(false);
+  }
+  window.addEventListener('scroll', handleDarkNavbar);
 
   useEffect(() => {
-    if (width > breakpoints.tablet.min && mobileMenu) {
-      handleMobileMenuClose();
+    if (width > breakpoints.tablet.min && openMobileMenu) {
+      setOpenMobileMenu(false);
     }
-    if (width <= breakpoints.tablet.min && userPopup) {
-      handleUserPopapClose();
-    }
-  }, [width, mobileMenu, userPopup]);
+  }, [width, openMobileMenu]);
 
   return (
     <>
-      <header className="header">
+      <header className={!darkNavbar ? "header" : "header darkHeader"}>
         <div className="container">
           <div className="header-wrapper">
             <>
@@ -64,20 +51,22 @@ const Header = () => {
                     </Link>
                   </nav>
                   <nav className="header-user">
-                    <button>
+                    <button onClick={() => setOpenCart(true)}>
                       <RiShoppingCartLine />
                     </button>
                     <button>
                       <BsBookmark />
                     </button>
-                    <button onClick={handleUserPopupOpen}>
-                      <AiOutlineUser />
-                    </button>
+                    <Link href="/user">
+                      <a>
+                        <AiOutlineUser />
+                      </a>
+                    </Link>
                   </nav>
                 </>
               ) : (
                 <button className="header-mobileMenu">
-                  <HiMenu onClick={handleMobileMenuOpen} />
+                  <HiMenu onClick={() => setOpenMobileMenu(true)} />
                 </button>
               )}
             </>
@@ -85,31 +74,12 @@ const Header = () => {
         </div>
       </header>
 
-      <Popover
-        id={id}
-        open={open}
-        anchorEl={userPopup}
-        onClose={handleUserPopapClose}
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}>
-        <div className="header-user__popup">
-          <Link href="/login">
-            <a>Login</a>
-          </Link>
-          <Divider style={{ width: '100%' }} />
-          <Link href="/registration">
-            <a>Registration</a>
-          </Link>
-        </div>
-      </Popover>
-
-      <LeftHeaderMenu mobileMenu={mobileMenu} handleMobileMenuClose={handleMobileMenuClose} />
+      <LeftHeaderMenu 
+        openMobileMenu={openMobileMenu} 
+        setOpenMobileMenu={setOpenMobileMenu} 
+        setOpenCart={setOpenCart}
+      />
+      <Cart openCart={openCart} setOpenCart={setOpenCart}/>
 
       <style jsx>{`
         .header {
@@ -119,8 +89,13 @@ const Header = () => {
           width: 100%;
           z-index: 100;
           padding: ${spacing.mini};
-          background-color: ${color.background.dark};
           color: ${color.text.light};
+          transition: background-color .2s linear, padding .2s linear;
+        }
+        .header.darkHeader {
+          padding: ${spacing.tiny} ${spacing.mini};
+          background-color: ${color.background.dark};
+          transition: background-color .2s linear, padding .2s linear;
         }
         .header-wrapper {
           display: flex;
@@ -147,6 +122,7 @@ const Header = () => {
           align-items: center;
         }
         .header-user button,
+        .header-user a,
         .header-mobileMenu {
           display: flex;
           justify-content: center;
@@ -163,6 +139,7 @@ const Header = () => {
           font-size: ${size.icons.extra_large};
         }
         .header-user button:last-child,
+        .header-user a,
         .header-mobileMenu:last-child {
           margin-right: 0;
         }

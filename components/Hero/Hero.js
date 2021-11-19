@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { font, color, spacing, size } from '../../config/theme';
 
-import heroimg from '../../utils/images/hero/heroimg.png';
+import heroimg from '../../utils/images/hero/heroimg2.jpeg';
 
 const Hero = () => {
   return (
@@ -26,15 +26,24 @@ const Hero = () => {
           width: 100%;
           height: 100vh;
         }
+        .hero-img:before {
+          content: '';
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100%;
+          height: 100%;
+          background:linear-gradient(0deg, rgba(0,0,0,0.5102415966386555) 0%, rgba(0,0,0,1) 100%);
+          z-index: 1;
+        }
         .hero-content {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
           width: 100%;
-          padding: ${spacing.medium} 0;
           text-align: center;
-          background-color: rgba(0, 0, 0, 0.83);
+          z-index: 2;
         }
         .hero-content__subtitle {
           font-size: ${size.heading.extra_small};
@@ -42,7 +51,7 @@ const Hero = () => {
           text-transform: uppercase;
         }
         .hero-content__title {
-          font-size: ${size.heading.large};
+          font-size: ${size.heading.extra_large};
           font-family: ${font.secondary};
           color: ${color.text.light};
           line-height: 1;
@@ -53,7 +62,7 @@ const Hero = () => {
             font-size: ${size.heading.extra_small};
           }
           .hero-content__title {
-            font-size: ${size.heading.medium};
+            font-size: ${size.heading.large};
           }
         }
       `}</style>
