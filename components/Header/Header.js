@@ -18,8 +18,10 @@ const Header = () => {
 
   const handleDarkNavbar = () => {
     window.scrollY >= 180 ? setDarkNavbar(true) : setDarkNavbar(false);
+  };
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', handleDarkNavbar);
   }
-  window.addEventListener('scroll', handleDarkNavbar);
 
   useEffect(() => {
     if (width > breakpoints.tablet.min && openMobileMenu) {
@@ -29,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={!darkNavbar ? "header" : "header darkHeader"}>
+      <header className={!darkNavbar ? 'header' : 'header darkHeader'}>
         <div className="container">
           <div className="header-wrapper">
             <>
@@ -74,12 +76,12 @@ const Header = () => {
         </div>
       </header>
 
-      <LeftHeaderMenu 
-        openMobileMenu={openMobileMenu} 
-        setOpenMobileMenu={setOpenMobileMenu} 
+      <LeftHeaderMenu
+        openMobileMenu={openMobileMenu}
+        setOpenMobileMenu={setOpenMobileMenu}
         setOpenCart={setOpenCart}
       />
-      <Cart openCart={openCart} setOpenCart={setOpenCart}/>
+      <Cart openCart={openCart} setOpenCart={setOpenCart} />
 
       <style jsx>{`
         .header {
@@ -90,12 +92,12 @@ const Header = () => {
           z-index: 100;
           padding: ${spacing.mini};
           color: ${color.text.light};
-          transition: background-color .2s linear, padding .2s linear;
+          transition: background-color 0.2s linear, padding 0.2s linear;
         }
         .header.darkHeader {
           padding: ${spacing.tiny} ${spacing.mini};
           background-color: ${color.background.dark};
-          transition: background-color .2s linear, padding .2s linear;
+          transition: background-color 0.2s linear, padding 0.2s linear;
         }
         .header-wrapper {
           display: flex;
