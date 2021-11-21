@@ -34,6 +34,7 @@ export const spacing = {
   nano: '4px',
   mini: '8px',
   tiny: '16px',
+  tinier: '20px',
   small: '24px',
   medium: '32px',
   large: '48px',
@@ -85,6 +86,7 @@ export const color = {
   background: {
     white: '#FFFFFF',
     white_darker: '#F2F2F2',
+    light_dark: '#161616',
     dark: '#050505',
     extra_dark: '#000000',
     secondary: '#B0976D',

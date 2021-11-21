@@ -56,13 +56,13 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
           position: relative;
           width: 100vw;
           height: 100%;
-          padding: 20px;
+          padding: ${spacing.tiny};
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           color: ${color.text.light};
-          background-color: #161616;
+          background-color: ${color.background.light_dark};
         }
         .mobile-menu__nav {
           display: flex;

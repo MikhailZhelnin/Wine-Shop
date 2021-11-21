@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
-import Poster from '../components/Poster/Poster';
 import Release from '../components/Release/Release';
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
       <main>
         <Hero />
         <Release />
-        <Poster />
       </main>
 
       <footer>

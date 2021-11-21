@@ -149,18 +149,6 @@ const Header = () => {
         .header-mobileMenu:last-child {
           margin-right: 0;
         }
-        .header-user__popup {
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          padding: 15px;
-        }
-        .header-user__popup a {
-          margin-bottom: 4px;
-        }
-        .header-user__popup a:last-child {
-          margin-bottom: 0;
-        }
       `}</style>
     </>
   );

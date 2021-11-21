@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Drawer from '@mui/material/Drawer';
 import { CgClose } from 'react-icons/cg';
 
-import { size, color, media } from '../../config/theme';
+import { size, color, media, spacing } from '../../config/theme';
 
 const Cart = ({ openCart, setOpenCart }) => {
   return (
@@ -31,7 +31,7 @@ const Cart = ({ openCart, setOpenCart }) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 20px;
+          padding: ${spacing.tinier};
           color: ${color.text.light_darker};
           background: ${color.background.dark};
         }
@@ -48,7 +48,7 @@ const Cart = ({ openCart, setOpenCart }) => {
         }
         .cart-content {
           flex-grow: 1;
-          padding: 20px;
+          padding: ${spacing.tinier};
           background-color: ${color.background.white_darker};
         }
 

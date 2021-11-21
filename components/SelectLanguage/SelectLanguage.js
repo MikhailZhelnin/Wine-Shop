@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import Popover from '@mui/material/Popover';
 import { MdOutlineLanguage } from 'react-icons/md';
 
+import { font, color, spacing, size } from '../../config/theme';
+
 import IconEng from '../../utils/icons/eng.svg';
 import IconEsp from '../../utils/icons/esp.svg';
 import IconFra from '../../utils/icons/fra.svg';
@@ -70,25 +72,25 @@ export const SelectLanguage = ({ mobile = false }) => {
       </Popover>
       <style jsx>{`
         .select-lang {
-          padding: ${!mobile ? '8px 0' : '0'};
+          padding: ${!mobile ? `${spacing.mini} 0` : '0'};
           display: flex;
           align-items: center;
-          font-size: 23px;
+          font-size: ${size.icons.large};
           cursor: pointer;
         }
         .select-lang__list {
-          padding: 10px 15px;
+          padding: ${spacing.mini} ${spacing.tiny};
         }
         .select-lang__item {
           display: flex;
           align-items: center;
-          padding: 5px 20px 10px 0;
+          padding: ${spacing.nano} ${spacing.tinier} ${spacing.mini} 0;
         }
         .select-lang__item:last-child {
           padding-bottom: 0;
         }
         .select-lang__item-icon {
-          margin-right: 10px;
+          margin-right: ${spacing.mini};
         }
         .select-lang__item-name {
         }
