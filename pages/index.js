@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import Release from '../components/Release/Release';
+import Varieties from '../components/Varieties/Varieties';
 
 export default function Home() {
   const router = useRouter();
@@ -25,9 +26,10 @@ export default function Home() {
       <main>
         <Hero />
         <Release />
+        <Varieties />
       </main>
 
-      <footer>
+      {/* <footer>
         {router.locales.map((item) => (
           <li key={item}>
             <Link href={router.asPath} locale={item}>
@@ -35,7 +37,7 @@ export default function Home() {
             </Link>
           </li>
         ))}
-      </footer>
+      </footer> */}
     </div>
   );
 }
