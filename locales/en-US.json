@@ -1,0 +1,18 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "shop": "Shop",
+        "aboutUs": "About Us",
+        "contact": "Contacts"
+    },
+    "Hero": {
+        "title": "Welcome to"
+    },
+    "Release": {
+        "title": "Current release",
+        "text": "We thrive in making fine wines that enrich the taste&soul."
+    },
+    "Shop": {
+        "greeting": "Hello"
+    }
+}

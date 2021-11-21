@@ -1,0 +1,18 @@
+{
+    "Navbar": {
+        "home": "Domicile",
+        "shop": "Magasin",
+        "aboutUs": "À propos de nous",
+        "contact": "Contacts"
+    },
+    "Hero": {
+        "title": "Bienvenue à"
+    },
+    "Release": {
+        "title": "Version actuale",
+        "text": "Nous prospérons dans l'élaboration de vins fins qui enrichissent le goût et l'âme."
+    },
+    "Shop": {
+        "greeting": "Bonjour"
+    }
+}

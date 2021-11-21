@@ -4,13 +4,16 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
 import { HiMenu } from 'react-icons/hi';
+import { useTranslations } from 'next-intl';
 
 import { font, color, spacing, size, breakpoints } from '../../config/theme';
 import { useWindowSize } from '../../hooks/useWindowWidth';
 import LeftHeaderMenu from './LeftHeaderMenu/LeftHeaderMenu';
 import Cart from '../Cart/Cart';
+import { SelectLanguage } from '../SelectLanguage/SelectLanguage';
 
 const Header = () => {
+  const t = useTranslations('Navbar');
   const { width } = useWindowSize();
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [openCart, setOpenCart] = useState(null);
@@ -28,7 +31,6 @@ const Header = () => {
       setOpenMobileMenu(false);
     }
   }, [width, openMobileMenu]);
-
   return (
     <>
       <header className={!darkNavbar ? 'header' : 'header darkHeader'}>
@@ -40,16 +42,16 @@ const Header = () => {
                 <>
                   <nav className="header-nav">
                     <Link href="/">
-                      <a>Home</a>
+                      <a>{t('home')}</a>
                     </Link>
                     <Link href="/shop">
-                      <a>Shop</a>
+                      <a>{t('shop')}</a>
                     </Link>
                     <Link href="/about-us">
-                      <a>About Us</a>
+                      <a>{t('aboutUs')}</a>
                     </Link>
                     <Link href="/contact">
-                      <a>Contact</a>
+                      <a>{t('contact')}</a>
                     </Link>
                   </nav>
                   <nav className="header-user">
@@ -64,6 +66,8 @@ const Header = () => {
                         <AiOutlineUser />
                       </a>
                     </Link>
+
+                    <SelectLanguage />
                   </nav>
                 </>
               ) : (
@@ -142,7 +146,6 @@ const Header = () => {
           font-size: ${size.icons.extra_large};
         }
         .header-user button:last-child,
-        .header-user a,
         .header-mobileMenu:last-child {
           margin-right: 0;
         }

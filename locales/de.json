@@ -1,0 +1,18 @@
+{
+    "Navbar": {
+        "home": "Heimat",
+        "shop": "Einkaufen",
+        "aboutUs": "Über uns",
+        "contact": "Kontakte"
+    },
+    "Hero": {
+        "title": "Willkommen zu"
+    },
+    "Release": {
+        "title": "Aktuelle version",
+        "text": "Wir gedeihen in der Herstellung erlesener Weine, die den Geschmack und die Seele bereichern."
+    },
+    "Shop": {
+        "greeting": "Hallo"
+    }
+}

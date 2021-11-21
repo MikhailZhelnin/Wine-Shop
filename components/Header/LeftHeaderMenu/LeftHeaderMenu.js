@@ -4,26 +4,30 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 import { CgClose } from 'react-icons/cg';
 import { AiOutlineUser } from 'react-icons/ai';
+import { useTranslations } from 'next-intl';
 
 import { size, color, spacing } from '../../../config/theme';
+import { SelectLanguage } from '../../SelectLanguage/SelectLanguage';
 
 const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
+  const t = useTranslations('Navbar');
+
   return (
     <>
       <Drawer anchor="right" open={openMobileMenu} onClose={() => setOpenMobileMenu(false)}>
         <div className="mobile-menu">
           <nav className="mobile-menu__nav">
             <Link href="/">
-              <a>Home</a>
+              <a>{t('home')}</a>
             </Link>
             <Link href="/shop">
-              <a>Shop</a>
+              <a>{t('shop')}</a>
             </Link>
             <Link href="/about-us">
-              <a>About Us</a>
+              <a>{t('aboutUs')}</a>
             </Link>
             <Link href="/contact">
-              <a>Contact</a>
+              <a>{t('contact')}</a>
             </Link>
           </nav>
           <nav className="mobile-menu__user">
@@ -40,6 +44,7 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
                 <AiOutlineUser />
               </a>
             </Link>
+            <SelectLanguage mobile={true} />
           </nav>
           <button className="mobile-menu__close" onClick={() => setOpenMobileMenu(false)}>
             <CgClose />

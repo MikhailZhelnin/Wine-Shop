@@ -1,10 +1,13 @@
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { font, color, spacing, size } from '../../config/theme';
 
 import heroimg from '../../utils/images/hero/heroimg2.jpeg';
 
 const Hero = () => {
+  const t = useTranslations('Hero');
+
   return (
     <>
       <section className="hero">
@@ -12,28 +15,34 @@ const Hero = () => {
           <Image src={heroimg} layout="fill" objectFit="cover" objectPosition="center" />
         </div>
         <div className="hero-content">
-          <h3 className="hero-content__subtitle">welcome to</h3>
+          <h3 className="hero-content__subtitle">{t('title')}</h3>
           <h1 className="hero-content__title">Wines</h1>
         </div>
       </section>
       <style jsx>{`
         .hero {
           position: relative;
+          width: 100%;
+          height: 100vh;
           margin-bottom: ${spacing.large};
         }
         .hero-img {
           position: relative;
           width: 100%;
-          height: 100vh;
+          height: 100%;
         }
         .hero-img:before {
           content: '';
           position: absolute;
-          top:0;
-          left:0;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
-          background:linear-gradient(0deg, rgba(0,0,0,0.5102415966386555) 0%, rgba(0,0,0,1) 100%);
+          background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5102415966386555) 0%,
+            rgba(0, 0, 0, 1) 100%
+          );
           z-index: 1;
         }
         .hero-content {
