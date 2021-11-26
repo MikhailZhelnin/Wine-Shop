@@ -14,5 +14,13 @@
     },
     "Shop": {
         "greeting": "Hello"
+    },
+    "Varieties": {
+        "nameRed": "The Reds",
+        "varietals": "Varietals",
+        "produced": "Wine produced",
+        "awards": "Awards won",
+        "varieties": "Varieties",
+        "shopNow": "Shop now"
     }
 }

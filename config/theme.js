@@ -17,14 +17,11 @@ export const breakpoints = {
   desktop: {
     min: 1024,
     max: 1679,
-  },
-  wide: {
-    min: 1680,
-  },
+  }
 };
 
 export const media = {
-  small_mobile: `max-width: ${breakpoints.small_mobile.max}px`,
+  small_mobile: `(max-width: ${breakpoints.small_mobile.max}px)`,
   mobile: `(max-width: ${breakpoints.mobile.max}px)`,
   tablet: `(max-width: ${breakpoints.tablet.max}px)`,
   desktop: `(max-width: ${breakpoints.desktop.max}px)`,
@@ -57,6 +54,7 @@ export const size = {
     large: '80px',
     medium: '64px',
     small: '40px',
+    smaller: '30px',
     extra_small: '25px',
   },
   text: {

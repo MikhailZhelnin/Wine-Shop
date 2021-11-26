@@ -14,5 +14,13 @@
     },
     "Shop": {
         "greeting": "Hallo"
+    },
+    "Varieties": {
+        "nameRed": "Die Roten",
+        "varietals": "Sorten",
+        "produced": "Wein produziert",
+        "awards": "Auszeichnungen gewonnen",
+        "varieties": "Sorten",
+        "shopNow": "Jetzt einkaufen"
     }
 }

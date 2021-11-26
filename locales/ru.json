@@ -14,5 +14,13 @@
     },
     "Shop": {
         "greeting": "Привет"
+    },
+    "Varieties": {
+        "nameRed": "Красные вина",
+        "varietals": "Сорта",
+        "produced": "Вин произведено",
+        "awards": "Награды",
+        "varieties": "Varieties",
+        "shopNow": "Выбрать вино"
     }
 }

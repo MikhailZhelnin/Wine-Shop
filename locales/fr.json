@@ -14,5 +14,13 @@
     },
     "Shop": {
         "greeting": "Bonjour"
+    },
+    "Varieties": {
+        "nameRed": "Les rouges",
+        "varietals": "Varietals",
+        "produced": "Vin produit",
+        "awards": "Prix ​​remportés",
+        "varieties": "Variétés",
+        "shopNow": "Achetez maintenant"
     }
 }

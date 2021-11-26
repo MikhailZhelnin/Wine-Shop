@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import { font, color, spacing, size } from '../../config/theme';
+import { font, color, spacing, size, media } from '../../config/theme';
 
 import heroimg from '../../utils/images/hero/heroimg2.jpeg';
 
@@ -66,7 +66,10 @@ const Hero = () => {
           line-height: 1;
         }
 
-        @media (max-width: 767px) {
+        @media ${media.mobile} {
+          .hero {
+            margin-bottom: ${spacing.medium};
+          }
           .hero-content__subtitle {
             font-size: ${size.heading.extra_small};
           }

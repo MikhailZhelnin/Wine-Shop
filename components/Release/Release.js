@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { GiGrapes } from 'react-icons/gi';
 
-import { font, color, spacing, size } from '../../config/theme';
+import { font, color, spacing, size, media } from '../../config/theme';
 
 import release from '../../utils/images/release/release.jpg';
 
@@ -32,6 +32,7 @@ const Release = () => {
       </section>
       <style jsx>{`
         .release {
+          margin-bottom: ${spacing.large};
         }
         .release-wrapper {
           display: flex;
@@ -72,6 +73,54 @@ const Release = () => {
         }
         .block__right {
           position: relative;
+        }
+
+        @media ${media.tablet} {
+          .release-block {
+            height: 500px;
+          }
+          .block__left-text {
+            max-width: 70%;
+            font-size: ${size.heading.smaller};
+          }
+        }
+
+        @media ${media.mobile} {
+          .release {
+            margin-bottom: ${spacing.medium};
+          }
+          .release-block {
+            height: 400px;
+          }
+          .release-wrapper {
+            padding: 0 ${spacing.tiny};
+          }
+          .block__left-icon {
+            margin-bottom: ${spacing.tiny};
+          }
+          .block__left-title {
+            font-size: ${size.text.main};
+          }
+          .block__left-text {
+            max-width: 90%;
+            font-size: ${size.heading.extra_small};
+          }
+        }
+
+        @media ${media.small_mobile} {
+          .release-wrapper {
+            flex-direction: column;
+          }
+          .release-block {
+            height: 350px;
+            width: 100%;
+          }
+          .block__left {
+            order: 2;
+          }
+          .block__right {
+            order: 1;
+          }
         }
       `}</style>
     </>
