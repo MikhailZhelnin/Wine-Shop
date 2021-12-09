@@ -17,7 +17,7 @@ export const breakpoints = {
   desktop: {
     min: 1024,
     max: 1679,
-  }
+  },
 };
 
 export const media = {
@@ -90,15 +90,8 @@ export const color = {
     secondary: '#B0976D',
     button: {
       default: '#111111',
+      default_secondary: '#B0976D',
       hover: '#464646',
     },
   },
-};
-
-export default {
-  breakpoints,
-  spacing,
-  size,
-  font,
-  color,
 };

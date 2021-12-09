@@ -4,7 +4,7 @@ import { GiGrapes } from 'react-icons/gi';
 
 import { font, color, spacing, size, media } from '../../config/theme';
 
-import release from '../../utils/images/release/release.jpg';
+import release from '../../public/images/release/release.jpg';
 
 const Release = () => {
   const t = useTranslations('Release');
@@ -25,7 +25,7 @@ const Release = () => {
             </div>
 
             <div className="release-block block__right">
-              <Image src={release} layout="fill" objectFit="cover" />
+              <Image src={release} layout="fill" objectFit="cover" alt="Release image" />
             </div>
           </div>
         </div>

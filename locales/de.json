@@ -17,10 +17,16 @@
     },
     "Varieties": {
         "nameRed": "Die Roten",
+        "nameWhite": "Die Weißen",
         "varietals": "Sorten",
         "produced": "Wein produziert",
         "awards": "Auszeichnungen gewonnen",
         "varieties": "Sorten",
         "shopNow": "Jetzt einkaufen"
+    },
+    "Instagram": {
+        "instagram": "Instagram",
+        "followers": "instagram follower",
+        "followUs": "Folge uns"
     }
 }

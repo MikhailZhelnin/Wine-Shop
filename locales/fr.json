@@ -16,11 +16,17 @@
         "greeting": "Bonjour"
     },
     "Varieties": {
-        "nameRed": "Les rouges",
+        "nameRed": "Les Rouges",
+        "nameWhite": "Les Blancs",
         "varietals": "Varietals",
         "produced": "Vin produit",
         "awards": "Prix ​​remportés",
         "varieties": "Variétés",
         "shopNow": "Achetez maintenant"
+    },
+    "Instagram": {
+        "instagram": "Instagram",
+        "followers": "Abonnés instagram",
+        "followUs": "Suivez nous"
     }
 }

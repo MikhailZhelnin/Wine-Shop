@@ -17,10 +17,16 @@
     },
     "Varieties": {
         "nameRed": "Красные вина",
+        "nameWhite": "Белые вина",
         "varietals": "Сорта",
         "produced": "Вин произведено",
         "awards": "Награды",
-        "varieties": "Varieties",
+        "varieties": "Сорта",
         "shopNow": "Выбрать вино"
+    },
+    "Instagram": {
+        "instagram": "Инстаграм",
+        "followers": "Количество подписчиков",
+        "followUs": "Присоедениться"
     }
 }

@@ -17,10 +17,16 @@
     },
     "Varieties": {
         "nameRed": "The Reds",
+        "nameWhite": "The Whites",
         "varietals": "Varietals",
         "produced": "Wine produced",
         "awards": "Awards won",
         "varieties": "Varieties",
         "shopNow": "Shop now"
+    },
+    "Instagram": {
+        "instagram": "Instagram",
+        "followers": "instagram followers",
+        "followUs": "follow us"
     }
 }

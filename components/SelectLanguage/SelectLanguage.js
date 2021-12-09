@@ -7,11 +7,11 @@ import { MdOutlineLanguage } from 'react-icons/md';
 
 import { font, color, spacing, size } from '../../config/theme';
 
-import IconEng from '../../utils/icons/eng.svg';
-import IconEsp from '../../utils/icons/esp.svg';
-import IconFra from '../../utils/icons/fra.svg';
-import IconGer from '../../utils/icons/ger.svg';
-import IconRus from '../../utils/icons/rus.svg';
+import IconEng from '../../public/icons/eng.svg';
+import IconEsp from '../../public/icons/esp.svg';
+import IconFra from '../../public/icons/fra.svg';
+import IconGer from '../../public/icons/ger.svg';
+import IconRus from '../../public/icons/rus.svg';
 
 export const SelectLanguage = ({ mobile = false }) => {
   const router = useRouter();
@@ -61,9 +61,9 @@ export const SelectLanguage = ({ mobile = false }) => {
         }}>
         <div className="select-lang__list">
           {router.locales.map((item) => (
-            <Link href={router.asPath} locale={item}>
+            <Link key={item} href={router.asPath} locale={item}>
               <a className="select-lang__item" onClick={handleClose}>
-                <img src={selectLang(item).icon.src} className="select-lang__item-icon" />
+                <img src={selectLang(item).icon.src} className="select-lang__item-icon" alt="" />
                 <span className="select-lang__item-name">{selectLang(item).name}</span>
               </a>
             </Link>

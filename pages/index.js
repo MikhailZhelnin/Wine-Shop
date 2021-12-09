@@ -6,6 +6,7 @@ import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import Release from '../components/Release/Release';
 import Varieties from '../components/Varieties/Varieties';
+import Instagram from '../components/Instagram/Instagram';
 
 export default function Home() {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function Home() {
         <Hero />
         <Release />
         <Varieties />
+        <Instagram />
       </main>
 
       {/* <footer>

@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 import { font, color, spacing, size, media } from '../../config/theme';
 
-import heroimg from '../../utils/images/hero/heroimg2.jpeg';
+import heroimg from '../../public/images/hero/heroimg2.jpeg';
 
 const Hero = () => {
   const t = useTranslations('Hero');
@@ -12,7 +12,13 @@ const Hero = () => {
     <>
       <section className="hero">
         <div className="hero-img">
-          <Image src={heroimg} layout="fill" objectFit="cover" objectPosition="center" />
+          <Image
+            src={heroimg}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            alt="Hero image"
+          />
         </div>
         <div className="hero-content">
           <h3 className="hero-content__subtitle">{t('title')}</h3>
