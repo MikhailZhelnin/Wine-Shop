@@ -26,7 +26,13 @@
     },
     "Instagram": {
         "instagram": "Инстаграм",
-        "followers": "Количество подписчиков",
+        "followers": "Подписчиков",
         "followUs": "Присоедениться"
+    },
+    "Newsletter": {
+        "title": "Будьте на связи",
+        "subtitle": "Подпишитесь на наши новости",
+        "placeholder": "Адрес почты",
+        "sendButton": "Отправить"
     }
 }

@@ -80,6 +80,7 @@ export const color = {
   },
   border: {
     dark: '#050505',
+    light: '#c6af89',
   },
   background: {
     white: '#FFFFFF',
@@ -88,6 +89,7 @@ export const color = {
     dark: '#050505',
     extra_dark: '#000000',
     secondary: '#B0976D',
+    secondary_light: '#c6af89',
     button: {
       default: '#111111',
       default_secondary: '#B0976D',

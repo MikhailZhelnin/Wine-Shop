@@ -28,5 +28,11 @@
         "instagram": "Instagram",
         "followers": "instagram followers",
         "followUs": "follow us"
+    },
+    "Newsletter": {
+        "title": "be connected",
+        "subtitle": "Join Our Newsletter",
+        "placeholder": "Email address",
+        "sendButton": "Send"
     }
 }

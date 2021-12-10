@@ -3,10 +3,11 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import Header from '../components/Header/Header';
-import Hero from '../components/Hero/Hero';
-import Release from '../components/Release/Release';
-import Varieties from '../components/Varieties/Varieties';
-import Instagram from '../components/Instagram/Instagram';
+import Hero from '../components/Home/Hero';
+import Release from '../components/Home/Release';
+import Varieties from '../components/Home/Varieties';
+import Instagram from '../components/Home/Instagram';
+import Newsletter from '../components/Home/Newsletter';
 
 export default function Home() {
   const router = useRouter();
@@ -29,6 +30,7 @@ export default function Home() {
         <Release />
         <Varieties />
         <Instagram />
+        <Newsletter />
       </main>
 
       {/* <footer>

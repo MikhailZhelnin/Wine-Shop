@@ -174,6 +174,12 @@ const Varieties = () => {
           border: none;
           text-transform: uppercase;
           cursor: pointer;
+          transition: background-color 0.3s linear;
+        }
+
+        .varieties-wrapper__right-button:active,
+        .varieties-wrapper__right-button:hover {
+          background-color: ${color.background.light_dark};
         }
 
         @media ${media.tablet} {
@@ -213,6 +219,7 @@ const Varieties = () => {
         }
         @media ${media.mobile} {
           .varieties {
+            margin-bottom: ${spacing.medium};
             padding: ${spacing.medium} 0;
           }
           .varieties-wrapper {
