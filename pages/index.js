@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 import Header from '../components/Header/Header';
 import Hero from '../components/Home/Hero';
@@ -8,9 +6,9 @@ import Release from '../components/Home/Release';
 import Varieties from '../components/Home/Varieties';
 import Instagram from '../components/Home/Instagram';
 import Newsletter from '../components/Home/Newsletter';
+import Footer from '../components/Footer';
 
 export default function Home() {
-  const router = useRouter();
   return (
     <div>
       <Head>
@@ -33,15 +31,7 @@ export default function Home() {
         <Newsletter />
       </main>
 
-      {/* <footer>
-        {router.locales.map((item) => (
-          <li key={item}>
-            <Link href={router.asPath} locale={item}>
-              <a>{item}</a>
-            </Link>
-          </li>
-        ))}
-      </footer> */}
+      <Footer />
     </div>
   );
 }

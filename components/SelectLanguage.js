@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 import Popover from '@mui/material/Popover';
 import { MdOutlineLanguage } from 'react-icons/md';
 
-import { font, color, spacing, size } from '../../config/theme';
+import { spacing, size } from '../config/theme';
 
-import IconEng from '../../public/icons/eng.svg';
-import IconEsp from '../../public/icons/esp.svg';
-import IconFra from '../../public/icons/fra.svg';
-import IconGer from '../../public/icons/ger.svg';
-import IconRus from '../../public/icons/rus.svg';
+import IconEng from '../public/icons/eng.svg';
+import IconEsp from '../public/icons/esp.svg';
+import IconFra from '../public/icons/fra.svg';
+import IconGer from '../public/icons/ger.svg';
+import IconRus from '../public/icons/rus.svg';
 
 export const SelectLanguage = ({ mobile = false }) => {
   const router = useRouter();

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Drawer from '@mui/material/Drawer';
 import { CgClose } from 'react-icons/cg';
 
-import { size, color, media, spacing } from '../../config/theme';
+import { size, color, media, spacing } from '../config/theme';
 
 const Cart = ({ openCart, setOpenCart }) => {
   return (

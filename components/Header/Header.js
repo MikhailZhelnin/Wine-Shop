@@ -9,8 +9,8 @@ import { useTranslations } from 'next-intl';
 import { font, color, spacing, size, breakpoints } from '../../config/theme';
 import { useWindowSize } from '../../hooks/useWindowWidth';
 import LeftHeaderMenu from './LeftHeaderMenu/LeftHeaderMenu';
-import Cart from '../Cart/Cart';
-import { SelectLanguage } from '../SelectLanguage/SelectLanguage';
+import Cart from '../Cart';
+import { SelectLanguage } from '../SelectLanguage';
 
 const Header = () => {
   const t = useTranslations('Navbar');

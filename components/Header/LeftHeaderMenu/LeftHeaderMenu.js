@@ -7,7 +7,7 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { useTranslations } from 'next-intl';
 
 import { size, color, spacing } from '../../../config/theme';
-import { SelectLanguage } from '../../SelectLanguage/SelectLanguage';
+import { SelectLanguage } from '../../SelectLanguage';
 
 const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
   const t = useTranslations('Navbar');
