@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { color, font, media, size, spacing } from '../../config/theme';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/router';
@@ -40,7 +41,9 @@ const Varieties = () => {
               <span className="varieties-wrapper__right-content__sorts">Merlot</span>
               <span className="varieties-wrapper__right-content__sorts">Pinot Noir</span>
             </div>
-            <button className="varieties-wrapper__right-button">{t('shopNow')}</button>
+            <Link href="/reds">
+              <a className="varieties-wrapper__right-button">{t('shopNow')}</a>
+            </Link>
           </div>
         </div>
 
@@ -72,7 +75,9 @@ const Varieties = () => {
               <span className="varieties-wrapper__right-content__sorts">Merlot</span>
               <span className="varieties-wrapper__right-content__sorts">Pinot Noir</span>
             </div>
-            <button className="varieties-wrapper__right-button">{t('shopNow')}</button>
+            <Link href="/whites">
+              <a className="varieties-wrapper__right-button">{t('shopNow')}</a>
+            </Link>
           </div>
         </div>
       </section>

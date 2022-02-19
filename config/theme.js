@@ -59,6 +59,7 @@ export const size = {
   },
   text: {
     main: '14px',
+    medium: '16px',
     large: '18px',
     extra_large: '25px',
   },
@@ -74,6 +75,7 @@ export const color = {
   text: {
     light: '#ffffff',
     light_darker: '#F2F2F2',
+    light_dark: '#8a8a8a',
     dark: '#050505',
     secondary: '#B0976D',
     secondary_light: '#c6af89',
@@ -95,5 +97,6 @@ export const color = {
       default_secondary: '#B0976D',
       hover: '#464646',
     },
+    wine_item: '#F6F6F6',
   },
 };

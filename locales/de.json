@@ -5,6 +5,10 @@
         "aboutUs": "Über uns",
         "contact": "Kontakte"
     },
+    "Cart": {
+        "title": "Einkaufswagen",
+        "emptyCart": "Keine produkte im Einkaufswagen"
+    },
     "Hero": {
         "title": "Willkommen zu"
     },
@@ -34,5 +38,19 @@
         "subtitle": "Abonnieren Sie unseren Newsletter",
         "placeholder": "E-Mail-Addresse",
         "sendButton": "Senden"
+    },
+    "Footer": {
+        "title": "wines versprechen",
+        "subtitle": "Wir machen gute Weines",
+        "faq": "hgf",
+        "terms": "bedingungen",
+        "privacy": "privatsphäre",
+        "returns": "kehrt zurück",
+        "rights": "2021 wines. alle rechte vorbehalten"
+    },
+    "HeroPages": {
+        "redWines": "Rot weine",
+        "whiteWines": "Weiß weine",
+        "text": "Lorem Ipsum ist einfach nur Blindtext der Druck- und Satzindustrie. Lorem Ipsum ist seit dem 16. Jahrhundert der Standard-Dummy-Text der Branche, als ein unbekannter Drucker eine Galeere mit Schriften nahm und sie zu einem Musterbuch zusammenstellte. Sie hat nicht nur fünf Jahrhunderte, sondern auch den Sprung in den elektronischen Schriftsatz im Wesentlichen unverändert überstanden."
     }
 }

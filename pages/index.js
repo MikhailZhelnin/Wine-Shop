@@ -1,12 +1,10 @@
 import Head from 'next/head';
 
-import Header from '../components/Header/Header';
 import Hero from '../components/Home/Hero';
 import Release from '../components/Home/Release';
 import Varieties from '../components/Home/Varieties';
 import Instagram from '../components/Home/Instagram';
 import Newsletter from '../components/Home/Newsletter';
-import Footer from '../components/Footer';
 
 export default function Home() {
   return (
@@ -21,8 +19,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-
       <main>
         <Hero />
         <Release />
@@ -30,8 +26,6 @@ export default function Home() {
         <Instagram />
         <Newsletter />
       </main>
-
-      <Footer />
     </div>
   );
 }

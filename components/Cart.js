@@ -1,22 +1,24 @@
 import Link from 'next/link';
 import Drawer from '@mui/material/Drawer';
 import { CgClose } from 'react-icons/cg';
+import { useTranslations } from 'next-intl';
 
 import { size, color, media, spacing } from '../config/theme';
 
 const Cart = ({ openCart, setOpenCart }) => {
+  const t = useTranslations('Cart');
   return (
     <>
       <Drawer anchor="right" open={openCart} onClose={() => setOpenCart(false)}>
         <div className="cart">
           <div className="cart-header">
-            <span className="cart-header__title">shopping cart</span>
+            <span className="cart-header__title">{t('title')}</span>
             <button className="cart-header__close" onClick={() => setOpenCart(false)}>
               <CgClose />
             </button>
           </div>
           <div className="cart-content">
-            <span className="cart-content__empty">No products in the cart</span>
+            <span className="cart-content__empty">{t('emptyCart')}</span>
           </div>
         </div>
       </Drawer>

@@ -20,9 +20,6 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
             <Link href="/">
               <a>{t('home')}</a>
             </Link>
-            <Link href="/shop">
-              <a>{t('shop')}</a>
-            </Link>
             <Link href="/about-us">
               <a>{t('aboutUs')}</a>
             </Link>

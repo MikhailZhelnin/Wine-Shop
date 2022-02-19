@@ -44,9 +44,6 @@ const Header = () => {
                     <Link href="/">
                       <a>{t('home')}</a>
                     </Link>
-                    <Link href="/shop">
-                      <a>{t('shop')}</a>
-                    </Link>
                     <Link href="/about-us">
                       <a>{t('aboutUs')}</a>
                     </Link>
@@ -111,6 +108,9 @@ const Header = () => {
         .header-title {
           font-size: ${size.logo.large};
           font-family: ${font.secondary};
+        }
+        .header-nav {
+          margin-left: 40px;
         }
         .header-nav a {
           margin-right: ${spacing.small};

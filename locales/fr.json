@@ -5,6 +5,10 @@
         "aboutUs": "À propos de nous",
         "contact": "Contacts"
     },
+    "Cart": {
+        "title": "Panier",
+        "emptyCart": "Aucun produit dans le chariot"
+    },
     "Hero": {
         "title": "Bienvenue à"
     },
@@ -34,5 +38,19 @@
         "subtitle": "Rejoignez notre lettre d'information",
         "placeholder": "Adresse e-mail",
         "sendButton": "Envoyer"
+    },
+    "Footer": {
+        "title": "wines promesse",
+        "subtitle": "Nous faisons de bons vins",
+        "faq": "fqp",
+        "terms": "termes",
+        "privacy": "intimité",
+        "returns": "retour",
+        "rights": "2021 wines. tous droits réservés"
+    },
+    "HeroPages": {
+        "redWines": "Vins rouges",
+        "whiteWines": "Vins blancs",
+        "text": "Lorem Ipsum est simplement un texte factice de l'industrie de l'impression et de la composition. Lorem Ipsum est le texte factice standard de l'industrie depuis les années 1500, lorsqu'un imprimeur inconnu a pris une galère de caractères et l'a brouillé pour en faire un livre spécimen de caractères. Il a survécu non seulement à cinq siècles, mais aussi au saut dans la composition électronique, restant essentiellement inchangé."
     }
 }
