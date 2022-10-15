@@ -18,26 +18,26 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
         <div className="mobile-menu">
           <nav className="mobile-menu__nav">
             <Link href="/">
-              <a>{t('home')}</a>
+              <a onClick={() => setOpenMobileMenu(false)}>{t('home')}</a>
             </Link>
-            <Link href="/about-us">
-              <a>{t('aboutUs')}</a>
+            <Link href="/">
+              <a onClick={() => setOpenMobileMenu(false)}>{t('aboutUs')}</a>
             </Link>
-            <Link href="/contact">
-              <a>{t('contact')}</a>
+            <Link href="/">
+              <a onClick={() => setOpenMobileMenu(false)}>{t('contact')}</a>
             </Link>
           </nav>
           <nav className="mobile-menu__user">
             <button onClick={() => setOpenCart(true)}>
               <RiShoppingCartLine />
             </button>
-            <Link href="/user">
-              <a>
+            <Link href="/">
+              <a onClick={() => setOpenMobileMenu(false)}>
                 <BsBookmark />
               </a>
             </Link>
-            <Link href="/user">
-              <a>
+            <Link href="/">
+              <a onClick={() => setOpenMobileMenu(false)}>
                 <AiOutlineUser />
               </a>
             </Link>
