@@ -5,11 +5,12 @@ import { BsBookmark } from 'react-icons/bs';
 import { CgClose } from 'react-icons/cg';
 import { AiOutlineUser } from 'react-icons/ai';
 import { useTranslations } from 'next-intl';
+import Badge from '@mui/material/Badge';
 
 import { size, color, spacing } from '../../../config/theme';
 import { SelectLanguage } from '../../SelectLanguage';
 
-const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
+const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart, totalQuantity }) => {
   const t = useTranslations('Navbar');
 
   return (
@@ -29,7 +30,9 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart }) => {
           </nav>
           <nav className="mobile-menu__user">
             <button onClick={() => setOpenCart(true)}>
-              <RiShoppingCartLine />
+              <Badge color="warning" badgeContent={totalQuantity}>
+                <RiShoppingCartLine />
+              </Badge>
             </button>
             <Link href="/">
               <a onClick={() => setOpenMobileMenu(false)}>

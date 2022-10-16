@@ -4,6 +4,8 @@ import Header from '../components/Header/Header';
 
 import '../styles/globals.css';
 
+import { wrapper } from '../redux/store';
+
 function MyApp({ Component, pageProps }) {
   return (
     <NextIntlProvider messages={pageProps.messages}>
@@ -14,4 +16,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);

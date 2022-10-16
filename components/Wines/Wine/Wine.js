@@ -1,12 +1,29 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { urlFor } from '../../../lib/sanity';
 
 import { color, font, media, size, spacing } from '../../../config/theme';
 
+import { cartAction } from '../../../redux/slices/cartSlice';
+
 import WineModal from '../../WineModal';
 
-const Wine = ({ title, price, description, image }) => {
+const Wine = ({ id, title, price, description, image }) => {
   const [open, setOpen] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(
+      cartAction.addItem({
+        id: id,
+        title: title,
+        price: price,
+        image: image,
+      }),
+    );
+  };
+
   return (
     <>
       <div className="wine-item">
@@ -17,9 +34,11 @@ const Wine = ({ title, price, description, image }) => {
           <h3 className="wine-title">{title}</h3>
           <div className="wine-price">${price}</div>
           <button className="wine-btn" onClick={() => setOpen(true)}>
-            Show More
+            Details
           </button>
-          <button className="wine-btn">Add To Cart</button>
+          <button className="wine-btn" onClick={addToCart}>
+            Add To Cart
+          </button>
         </div>
         <WineModal
           open={open}

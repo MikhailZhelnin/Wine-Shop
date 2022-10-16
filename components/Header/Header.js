@@ -4,7 +4,10 @@ import { RiShoppingCartLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 import { AiOutlineUser } from 'react-icons/ai';
 import { HiMenu } from 'react-icons/hi';
+import Badge from '@mui/material/Badge';
 import { useTranslations } from 'next-intl';
+import { useSelector } from 'react-redux';
+import { selectCartState } from '../../redux/slices/cartSlice';
 
 import { font, color, spacing, size, breakpoints } from '../../config/theme';
 import { useWindowSize } from '../../hooks/useWindowWidth';
@@ -18,6 +21,7 @@ const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(null);
   const [openCart, setOpenCart] = useState(null);
   const [darkNavbar, setDarkNavbar] = useState(null);
+  const totalQuantity = useSelector((selectCartState) => selectCartState.cart.totalQuantity);
 
   const handleDarkNavbar = () => {
     window.scrollY > 0 ? setDarkNavbar(true) : setDarkNavbar(false);
@@ -53,7 +57,9 @@ const Header = () => {
                   </nav>
                   <nav className="header-user">
                     <button onClick={() => setOpenCart(true)}>
-                      <RiShoppingCartLine />
+                      <Badge color="warning" badgeContent={totalQuantity}>
+                        <RiShoppingCartLine />
+                      </Badge>
                     </button>
                     <button>
                       <BsBookmark />
@@ -81,6 +87,7 @@ const Header = () => {
         openMobileMenu={openMobileMenu}
         setOpenMobileMenu={setOpenMobileMenu}
         setOpenCart={setOpenCart}
+        totalQuantity={totalQuantity}
       />
       <Cart openCart={openCart} setOpenCart={setOpenCart} />
 

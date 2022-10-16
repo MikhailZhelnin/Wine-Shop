@@ -132,7 +132,7 @@ const WineModal = ({ open, handleClose, title, description, price, image }) => {
           }
         }
         @media ${media.mobile} {
-          .modal-wrapper {
+          .modal {
             width: 100%;
             height: 100%;
             padding: ${spacing.small};
@@ -149,7 +149,7 @@ const WineModal = ({ open, handleClose, title, description, price, image }) => {
           }
         }
         @media (max-width: 550px) {
-          .modal-wrapper {
+          .modal {
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
