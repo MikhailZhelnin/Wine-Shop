@@ -20,7 +20,7 @@ const Header = () => {
   const [darkNavbar, setDarkNavbar] = useState(null);
 
   const handleDarkNavbar = () => {
-    window.scrollY >= 180 ? setDarkNavbar(true) : setDarkNavbar(false);
+    window.scrollY > 0 ? setDarkNavbar(true) : setDarkNavbar(false);
   };
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', handleDarkNavbar);
@@ -98,7 +98,7 @@ const Header = () => {
         .header.darkHeader {
           padding: ${spacing.tiny} ${spacing.mini};
           background-color: ${color.background.dark};
-          transition: background-color 0.2s linear, padding 0.2s linear;
+          transition: background-color 0.1s linear, padding 0.1s linear;
         }
         .header-wrapper {
           display: flex;

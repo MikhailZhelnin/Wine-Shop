@@ -1,20 +1,25 @@
-import {useRef} from 'react';
 import Modal from '@mui/material/Modal';
+import Backdrop from '@mui/material/Backdrop';
+import Fade from '@mui/material/Fade';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { BsBookmark } from 'react-icons/bs';
 import { urlFor } from '../lib/sanity';
 
 import { color, font, media, size, spacing } from '../config/theme';
-import { useOnClickOutside } from '../hooks/useOnClickOutside';
 
 const WineModal = ({ open, handleClose, title, description, price, image }) => {
-  const ref = useRef();
-  useOnClickOutside(ref, () => handleClose());
   return (
     <>
-      {open && (
-        <div className="modal">
-          <div ref={ref} className="modal-wrapper">
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}>
+        <Fade in={open}>
+          <div className="modal">
             <div className="modal-image">
               <img src={urlFor(image).url()} alt={title} />
             </div>
@@ -33,20 +38,11 @@ const WineModal = ({ open, handleClose, title, description, price, image }) => {
               <AiFillCloseCircle />
             </button>
           </div>
-        </div>
-      )}
+        </Fade>
+      </Modal>
 
       <style jsx>{`
         .modal {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          z-index: 99999;
-        }
-        .modal-wrapper {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -151,7 +147,7 @@ const WineModal = ({ open, handleClose, title, description, price, image }) => {
           .modal-content__title {
             font-size: ${size.heading.smaller};
           }
-        } 
+        }
         @media (max-width: 550px) {
           .modal-wrapper {
             flex-direction: column;
