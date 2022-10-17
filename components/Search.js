@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
+import { useTranslations } from 'next-intl';
 
 import { spacing } from '../config/theme';
 
 const Search = ({ data, setData }) => {
+  const t = useTranslations('Search');
   const [filteredData, setFilteredData] = useState(data);
 
   const handleSearch = (e) => {
@@ -21,7 +23,7 @@ const Search = ({ data, setData }) => {
         <div className="search">
           <TextField
             id="outlined-basic"
-            label="Search"
+            label={t('search')}
             variant="outlined"
             onChange={handleSearch}
           />

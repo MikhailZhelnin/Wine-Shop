@@ -1,7 +1,8 @@
 {
     "Navbar": {
         "home": "Heimat",
-        "shop": "Einkaufen",
+        "redWines": "Rot weine",
+        "whiteWines": "Weiß weine",
         "aboutUs": "Über uns",
         "contact": "Kontakte"
     },
@@ -52,5 +53,17 @@
         "redWines": "Rot weine",
         "whiteWines": "Weiß weine",
         "text": "Lorem Ipsum ist einfach nur Blindtext der Druck- und Satzindustrie. Lorem Ipsum ist seit dem 16. Jahrhundert der Standard-Dummy-Text der Branche, als ein unbekannter Drucker eine Galeere mit Schriften nahm und sie zu einem Musterbuch zusammenstellte. Sie hat nicht nur fünf Jahrhunderte, sondern auch den Sprung in den elektronischen Schriftsatz im Wesentlichen unverändert überstanden."
+    },
+    "WineButtons": {
+        "details": "Einzelheiten",
+        "addTocart": "In den Warenkorb legen",
+        "wishlist": "Zur Wunschliste hinzufügen"
+    },
+    "Search": {
+        "search": "Suche..."
+    }, 
+    "Notifications": {
+        "subscribing": "Danke fürs Abonnieren!",
+        "addedToCart": "Zum Warenkorb hinzugefügt"
     }
 }

@@ -41,7 +41,9 @@ const Header = () => {
         <div className="container">
           <div className="header-wrapper">
             <>
-              <h2 className="header-title">Wines</h2>
+              <Link href="/">
+                <a className="header-title">Wines</a>
+              </Link>
               {width > breakpoints.tablet.min ? (
                 <>
                   <nav className="header-nav">

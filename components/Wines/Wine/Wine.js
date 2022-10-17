@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { urlFor } from '../../../lib/sanity';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import { useTranslations } from 'next-intl';
 
 import { color, font, media, size, spacing } from '../../../config/theme';
 
@@ -8,8 +11,27 @@ import { cartAction } from '../../../redux/slices/cartSlice';
 
 import WineModal from '../../WineModal';
 
+const Alert = forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const Wine = ({ id, title, price, description, image }) => {
+  const t = useTranslations('WineButtons');
+  const t2 = useTranslations('Notifications');
   const [open, setOpen] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleAlertShow = () => {
+    setShowAlert(true);
+  };
+
+  const handleAlertClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setShowAlert(false);
+  };
 
   const dispatch = useDispatch();
 
@@ -22,6 +44,7 @@ const Wine = ({ id, title, price, description, image }) => {
         image: image,
       }),
     );
+    handleAlertShow();
   };
 
   return (
@@ -34,10 +57,10 @@ const Wine = ({ id, title, price, description, image }) => {
           <h3 className="wine-title">{title}</h3>
           <div className="wine-price">${price}</div>
           <button className="wine-btn" onClick={() => setOpen(true)}>
-            Details
+            {t('details')}
           </button>
           <button className="wine-btn" onClick={addToCart}>
-            Add To Cart
+            {t('addTocart')}
           </button>
         </div>
         <WineModal
@@ -47,7 +70,13 @@ const Wine = ({ id, title, price, description, image }) => {
           price={price}
           description={description}
           image={image}
+          addToCart={() => addToCart()}
         />
+        <Snackbar open={showAlert} autoHideDuration={3000} onClose={handleAlertClose}>
+          <Alert onClose={handleAlertClose} severity="success" sx={{ width: '100%' }}>
+            {t2('addedToCart')}
+          </Alert>
+        </Snackbar>
       </div>
 
       <style jsx>{`

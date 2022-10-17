@@ -21,6 +21,12 @@ const LeftHeaderMenu = ({ openMobileMenu, setOpenMobileMenu, setOpenCart, totalQ
             <Link href="/">
               <a onClick={() => setOpenMobileMenu(false)}>{t('home')}</a>
             </Link>
+            <Link href="/reds">
+              <a onClick={() => setOpenMobileMenu(false)}>{t('redWines')}</a>
+            </Link>
+            <Link href="/whites">
+              <a onClick={() => setOpenMobileMenu(false)}>{t('whiteWines')}</a>
+            </Link>
             <Link href="/">
               <a onClick={() => setOpenMobileMenu(false)}>{t('aboutUs')}</a>
             </Link>

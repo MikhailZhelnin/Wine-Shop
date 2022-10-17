@@ -11,6 +11,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 const Newsletter = () => {
   const t = useTranslations('Newsletter');
+  const t2 = useTranslations('Notifications');
   const [email, setEmail] = useState('');
   const [open, setOpen] = React.useState(false);
 
@@ -59,7 +60,7 @@ const Newsletter = () => {
       </section>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          Thanks for subscribing!
+          {t2('subscribing')}
         </Alert>
       </Snackbar>
       <style jsx>{`

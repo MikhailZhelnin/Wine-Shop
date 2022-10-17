@@ -4,10 +4,13 @@ import Fade from '@mui/material/Fade';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { BsBookmark } from 'react-icons/bs';
 import { urlFor } from '../lib/sanity';
+import { useTranslations } from 'next-intl';
 
 import { color, font, media, size, spacing } from '../config/theme';
 
-const WineModal = ({ open, handleClose, title, description, price, image }) => {
+const WineModal = ({ addToCart, open, handleClose, id, title, description, price, image }) => {
+  const t = useTranslations('WineButtons');
+
   return (
     <>
       <Modal
@@ -28,9 +31,11 @@ const WineModal = ({ open, handleClose, title, description, price, image }) => {
               <div className="modal-content__price">${price}</div>
               <div className="modal-content__description">{description}</div>
               <div className="modal-content__actions">
-                <button className="modal-content__actions-addToCart">Add To Cart</button>
+                <button className="modal-content__actions-addToCart" onClick={addToCart}>
+                  {t('addTocart')}
+                </button>
                 <button className="modal-content__actions-AddToWishlist">
-                  <span>Add To Wishlist</span> <BsBookmark />
+                  <span>{t('wishlist')}</span> <BsBookmark />
                 </button>
               </div>
             </div>
