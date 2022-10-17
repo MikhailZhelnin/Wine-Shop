@@ -88,7 +88,7 @@ const Wine = ({ id, title, price, description, image }) => {
           flex-direction: column;
         }
         .wine-image {
-          height: 350px;
+          height: 300px;
           width: 100%;
           background-color: ${color.background.wine_item};
           padding: 10px 0 0 0;
@@ -135,7 +135,6 @@ const Wine = ({ id, title, price, description, image }) => {
             width: 31%;
           }
           .wine-image {
-            height: 350px;
             width: 100%;
           }
         }
@@ -149,7 +148,7 @@ const Wine = ({ id, title, price, description, image }) => {
             width: 70%;
           }
           .wine-image {
-            height: 390px;
+            height: 350px;
             width: 100%;
           }
         }

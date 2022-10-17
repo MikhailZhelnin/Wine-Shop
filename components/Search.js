@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import TextField from '@mui/material/TextField';
 import { useTranslations } from 'next-intl';
 
-import { spacing } from '../config/theme';
+import { spacing, size, color } from '../config/theme';
 
 const Search = ({ data, setData }) => {
   const t = useTranslations('Search');
@@ -21,11 +20,11 @@ const Search = ({ data, setData }) => {
     <>
       <div className="container">
         <div className="search">
-          <TextField
-            id="outlined-basic"
-            label={t('search')}
-            variant="outlined"
+          <input
+            type="text"
             onChange={handleSearch}
+            className="search__input"
+            placeholder={t('search')}
           />
         </div>
       </div>
@@ -35,6 +34,20 @@ const Search = ({ data, setData }) => {
           margin-bottom: ${spacing.large};
           display: flex;
           justify-content: center;
+        }
+        .search__input {
+          width: 300px;
+          padding: ${spacing.tiny} ${spacing.tiny};
+          font-size: ${size.text.large};
+          color: ${color.text.dark};
+          border: 1px solid #b6b6b6;
+          outline: none;
+        }
+        .search__input:focus {
+          background-color: ${color.background.white_darker};
+        }
+        input[type='text'].search__input::-webkit-input-placeholder {
+          color: ${color.text.dark};
         }
       `}</style>
     </>
