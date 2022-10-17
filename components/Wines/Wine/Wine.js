@@ -82,28 +82,35 @@ const Wine = ({ id, title, price, description, image }) => {
       <style jsx>{`
         .wine-item {
           margin-bottom: ${spacing.tinier};
-          min-height: 550px;
           width: 22%;
+          border: 1px solid #b6b6b6;
+          display: flex;
+          flex-direction: column;
         }
         .wine-image {
           height: 350px;
           width: 100%;
+          background-color: ${color.background.wine_item};
+          padding: 10px 0 0 0;
         }
         .wine-image img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
         .wine-content {
-          margin-bottom: ${spacing.tiny};
           padding: ${spacing.tiny};
           text-align: center;
           background-color: ${color.background.wine_item};
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
         .wine-title {
           margin-bottom: ${spacing.tiny};
           font-size: ${size.heading.extra_small};
           font-family: ${font.secondary};
+          flex-grow: 1;
         }
         .wine-price {
           margin-bottom: ${spacing.tiny};

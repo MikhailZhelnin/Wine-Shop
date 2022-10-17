@@ -59,6 +59,7 @@ const WineModal = ({ addToCart, open, handleClose, id, title, description, price
           justify-content: space-between;
           align-items: center;
           background-color: ${color.background.white};
+          overflow-x: scroll;
         }
         .modal-image {
           width: 30%;
@@ -67,7 +68,7 @@ const WineModal = ({ addToCart, open, handleClose, id, title, description, price
         .modal-image img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
         .modal-content {
           width: 55%;
@@ -79,6 +80,7 @@ const WineModal = ({ addToCart, open, handleClose, id, title, description, price
           margin-bottom: ${spacing.tiny};
           font-size: ${size.heading.small};
           font-family: ${font.secondary};
+          text-align: center;
         }
         .modal-content__price {
           margin-bottom: ${spacing.tiny};

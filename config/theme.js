@@ -55,7 +55,7 @@ export const size = {
     medium: '64px',
     small: '40px',
     smaller: '30px',
-    extra_small: '25px',
+    extra_small: '23px',
   },
   text: {
     main: '14px',
