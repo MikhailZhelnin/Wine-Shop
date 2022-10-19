@@ -8,7 +8,12 @@
     },
     "Cart": {
         "title": "Корзина",
-        "emptyCart": "Ваша козина пуста"
+        "emptyCart": "Ваша козина пуста",
+        "itemName": "Название",
+        "itemQuantity": "Количество",
+        "itemTotal": "Общая цена",
+        "itemDelete": "Удалить",
+        "totalPrice": "Сумма"
     },
     "Hero": {
         "title": "Добро пожаловать в"
@@ -63,7 +68,8 @@
         "search": "Поиск..."
     }, 
     "Notifications": {
-        "subscribing": "спасибо за подписку!",
-        "addedToCart": "Добавлено в корзину"
+        "subscribing": "Спасибо за подписку!",
+        "addedToCart": "Добавлено в корзину",
+        "deletedFromCart": "Удалено с корзины"
     }
 }

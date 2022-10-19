@@ -8,7 +8,12 @@
     },
     "Cart": {
         "title": "Panier",
-        "emptyCart": "Aucun produit dans le chariot"
+        "emptyCart": "Aucun produit dans le chariot",
+        "itemName": "Nom",
+        "itemQuantity": "Quantité",
+        "itemTotal": "Totale",
+        "itemDelete": "Effacer",
+        "totalPrice": "Prix ​​total"
     },
     "Hero": {
         "title": "Bienvenue à"
@@ -64,6 +69,7 @@
     }, 
     "Notifications": {
         "subscribing": "Merci pour votre subscription!",
-        "addedToCart": "Ajouté au panier"
+        "addedToCart": "Ajouté au panier",
+        "deletedFromCart": "Supprimé du panier"
     }
 }

@@ -8,7 +8,12 @@
     },
     "Cart": {
         "title": "Einkaufswagen",
-        "emptyCart": "Keine produkte im Einkaufswagen"
+        "emptyCart": "Keine produkte im Einkaufswagen",
+        "itemName": "Name",
+        "itemQuantity": "Menge",
+        "itemTotal": "Total",
+        "itemDelete": "Gesamt",
+        "totalPrice": "Gesamtpreis"
     },
     "Hero": {
         "title": "Willkommen zu"
@@ -64,6 +69,7 @@
     }, 
     "Notifications": {
         "subscribing": "Danke fürs Abonnieren!",
-        "addedToCart": "Zum Warenkorb hinzugefügt"
+        "addedToCart": "Zum Warenkorb hinzugefügt",
+        "deletedFromCart": "Aus Warenkorb gelöscht"
     }
 }
