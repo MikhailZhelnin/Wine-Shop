@@ -10,3 +10,4 @@ https://wines-project.netlify.app/
 4. MUI
 5. Next Intl
 6. React Icons
+7. React Paginate

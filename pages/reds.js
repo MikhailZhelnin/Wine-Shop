@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import { useTranslations } from 'next-intl';
 import { sanityClient } from '../lib/sanity';
+import ReactPaginate from 'react-paginate';
 
 import { spacing } from '../config/theme';
 
@@ -13,10 +14,23 @@ import Hero from '../components/Hero';
 import Wines from '../components/Wines/Wines';
 import Search from '../components/Search';
 
+const PER_PAGE = 8;
+
 const Shop = ({ redWines }) => {
   const t = useTranslations('HeroPages');
 
   const [filteredWines, setFilteredWines] = useState(redWines);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageClick = ({ selected: selectedPage }) => {
+    setCurrentPage(selectedPage);
+  };
+
+  const offset = currentPage * PER_PAGE;
+
+  const currentPageData = filteredWines.slice(offset, offset + PER_PAGE);
+
+  const pageCount = Math.ceil(filteredWines.length / PER_PAGE);
 
   return (
     <>
@@ -40,7 +54,20 @@ const Shop = ({ redWines }) => {
             <h2>No wines are found!</h2>
           </div>
         ) : (
-          <Wines wines={filteredWines} />
+          <>
+            <Wines wines={currentPageData} />
+            <ReactPaginate
+              previousLabel={'prev'}
+              nextLabel={'next'}
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName={'pagination'}
+              previousLinkClassName={'pagination-link'}
+              nextLinkClassName={'pagination-link'}
+              disabledClassName={'pagination-link__disabled'}
+              activeClassName={'pagination-link__active'}
+            />
+          </>
         )}
       </div>
       <style jsx>{`
